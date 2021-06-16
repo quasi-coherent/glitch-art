@@ -17,9 +17,7 @@ pub fn build<'a>(img: &'a mut DynamicImage, pixelate: &Pixelate) -> &'a mut Dyna
     let reg = get_pixel_size(pixelate);
 
     for r in 0..reg.num_rows {
-        println!("r={}", r);
         for c in 0..reg.num_cols {
-            println!("c={}", c);
             let x1 = r * reg.side_len + pixelate.canvas.col_min;
             let x2 = (r + 1) * reg.side_len + pixelate.canvas.col_min;
             let y1 = c * reg.side_len + pixelate.canvas.row_min;
